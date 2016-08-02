@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hbulens.GoPiGo", "hbulens.GoPiGo\hbulens.GoPiGo.csproj", "{4149602B-8F02-400E-B637-AD58ED020BC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hbulens.GoPiGo.IoT.Headless", "hbulens.GoPiGo.IoT.Headless\hbulens.GoPiGo.IoT.Headless.csproj", "{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,26 @@ Global
 		{4149602B-8F02-400E-B637-AD58ED020BC3}.Release|x64.Build.0 = Release|x64
 		{4149602B-8F02-400E-B637-AD58ED020BC3}.Release|x86.ActiveCfg = Release|x86
 		{4149602B-8F02-400E-B637-AD58ED020BC3}.Release|x86.Build.0 = Release|x86
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Debug|ARM.ActiveCfg = Debug|ARM
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Debug|ARM.Build.0 = Debug|ARM
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Debug|ARM.Deploy.0 = Debug|ARM
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Debug|x64.ActiveCfg = Debug|x64
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Debug|x64.Build.0 = Debug|x64
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Debug|x64.Deploy.0 = Debug|x64
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Debug|x86.ActiveCfg = Debug|x86
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Debug|x86.Build.0 = Debug|x86
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Debug|x86.Deploy.0 = Debug|x86
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Release|Any CPU.ActiveCfg = Release|x86
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Release|ARM.ActiveCfg = Release|ARM
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Release|ARM.Build.0 = Release|ARM
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Release|ARM.Deploy.0 = Release|ARM
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Release|x64.ActiveCfg = Release|x64
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Release|x64.Build.0 = Release|x64
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Release|x64.Deploy.0 = Release|x64
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Release|x86.ActiveCfg = Release|x86
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Release|x86.Build.0 = Release|x86
+		{42DA3E6E-A4A2-4F62-8F19-A82CB5CD175D}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
