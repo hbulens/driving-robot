@@ -16,6 +16,11 @@ namespace hbulens.GoPiGo.IoT.Headless
     {
         #region Constructor
 
+        public StartupTask()
+        {
+
+        }
+
         #endregion Constructor
 
         #region Members
@@ -34,13 +39,18 @@ namespace hbulens.GoPiGo.IoT.Headless
         {
             // Register API
             RestRouteHandler restRouteHandler = new RestRouteHandler();
-            restRouteHandler.RegisterController<MotorController>();
+            restRouteHandler.RegisterController<MotorApiController>();
 
-            // Start Web API Host
+            // Register Web API on the 8800 port
             HttpServer httpServer = new HttpServer(8800);
+
+            // Register the API route
             httpServer.RegisterRoute("api", restRouteHandler);
+
+            // Start the host
             httpServer.StartServerAsync().Wait();
 
+            // This will prevent the background instance from shutting down immediately
             _deferral = taskInstance.GetDeferral();
 
         }

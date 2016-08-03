@@ -1,56 +1,91 @@
-﻿using System;
+﻿using hbulens.GoPiGo.Sensors;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Windows.Devices.Enumeration;
 using Windows.Devices.I2c;
-using GoPiGo.Sensors;
 
-namespace GoPiGo
+namespace hbulens.GoPiGo
 {
-    public static class DeviceFactory
+    internal class GoPiGoBuilder : IGoPiGoBuilder
     {
-        public static IBuildGoPiGoDevices Build = new DeviceBuilder();
-    }
+        #region Constructor
 
-    public interface IBuildGoPiGoDevices
-    {
-        IGoPiGo BuildGoPiGo();
-        IGoPiGo BuildGoPiGo(int address);
-        ILed BuildLed(Pin pin);
-        IUltrasonicRangerSensor BuildUltraSonicSensor(Pin pin);
-    }
+        internal GoPiGoBuilder()
+        {
 
-    internal class DeviceBuilder : IBuildGoPiGoDevices
-    {
+        }
+
+        #endregion Constructor
+
+        #region Properties
+
         private const string I2CName = "I2C1"; /* For Raspberry Pi 2, use I2C1 */
         private const byte GoPiGoAddress = 0x08;
         private GoPiGo _device;
 
+        #endregion Properties
+
+        #region Methods
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pin"></param>
+        /// <returns></returns>
         public ILed BuildLed(Pin pin)
         {
             return DoBuild(x => new Led(x, pin));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pin"></param>
+        /// <returns></returns>
         public IUltrasonicRangerSensor BuildUltraSonicSensor(Pin pin)
         {
             return DoBuild(x => new UltrasonicRangerSensor(x, pin));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TSensor"></typeparam>
+        /// <param name="factory"></param>
+        /// <returns></returns>
         private TSensor DoBuild<TSensor>(Func<GoPiGo, TSensor> factory)
         {
             var device = BuildGoPiGoImpl(GoPiGoAddress);
             return factory(device);
         }
 
-        public IGoPiGo BuildGoPiGo()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public IGoPiGo Build()
         {
             return BuildGoPiGoImpl(GoPiGoAddress);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="address"></param>
+        /// <returns></returns>
         public IGoPiGo BuildGoPiGo(int address)
         {
             return BuildGoPiGoImpl(address);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="goPiGoAddress"></param>
+        /// <returns></returns>
         private GoPiGo BuildGoPiGoImpl(int goPiGoAddress)
         {
             if (_device != null)
@@ -75,6 +110,10 @@ namespace GoPiGo
             return _device;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private static async Task<DeviceInformationCollection> GetDeviceInfo()
         {
             //Find the selector string for the I2C bus controller
@@ -83,5 +122,7 @@ namespace GoPiGo
             var dis = await DeviceInformation.FindAllAsync(aqs);
             return dis;
         }
+
+        #endregion Methods             
     }
 }

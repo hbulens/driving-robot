@@ -1,4 +1,4 @@
-﻿namespace GoPiGo
+﻿namespace hbulens.GoPiGo
 {
     public enum PinMode
     {

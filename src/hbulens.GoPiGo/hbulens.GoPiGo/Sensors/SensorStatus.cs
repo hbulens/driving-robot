@@ -1,4 +1,4 @@
-﻿namespace GoPiGo.Sensors
+﻿namespace hbulens.GoPiGo.Sensors
 {
     public enum SensorStatus
     {

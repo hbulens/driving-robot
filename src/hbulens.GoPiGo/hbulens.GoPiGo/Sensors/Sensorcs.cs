@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GoPiGo.Sensors
+namespace hbulens.GoPiGo.Sensors
 {
     public abstract class Sensor<TSensorType> where TSensorType : class
     {

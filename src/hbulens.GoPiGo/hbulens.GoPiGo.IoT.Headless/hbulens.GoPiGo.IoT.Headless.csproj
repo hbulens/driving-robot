@@ -96,8 +96,7 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\DataReceived.cs" />
-    <Compile Include="Api\MotorController.cs" />
+    <Compile Include="Api\MotorApiController.cs" />
     <Compile Include="StartupTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
